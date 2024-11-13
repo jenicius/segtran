@@ -63,7 +63,7 @@ def covert_h5(root):
     if is_training:
         modalities.append('seg')
         
-    for img_dir in tqdm(img_dirs):
+    for img_dir in tqdm(sorted(img_dirs)):
         image_mods = []
         for mod in modalities:
             img_path = join(root, img_dir, img_dir + "_%s.nii" %mod)
