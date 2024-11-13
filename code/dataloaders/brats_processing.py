@@ -66,7 +66,7 @@ def covert_h5(root):
     for img_dir in tqdm(img_dirs):
         image_mods = []
         for mod in modalities:
-            img_path = join(root, img_dir, img_dir + "_%s.nii.gz" %mod)
+            img_path = join(root, img_dir, img_dir + "_%s.nii" %mod)
             image_obj = nib.load(img_path)
             image = image_obj.get_fdata()
             image = image.astype(np.float32)
